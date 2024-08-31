@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Fudeu from './components/profile/index'
 import "bootstrap/dist/css/bootstrap.min.css";
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 function App() {
 
   const [cvc, setCvc] = useState('')
@@ -13,7 +12,7 @@ function App() {
       setCvc(object.value);
     }
   }
-
+  console.log(cvc)
   function handleCard(object) {
     if (object.value > object.maxLength) {
       object.value = object.value.slice(0, object.maxLength)
@@ -21,8 +20,8 @@ function App() {
 
     const arrstring = Array.from(object.value)
     console.log(arrstring)
-    if (arrstring.length == 4 || arrstring.length == 9 || arrstring.length == 14 ) {
-      if (past[past.length - 1] == '.') {
+    if (arrstring.length === 4 || arrstring.length === 9 || arrstring.length ===14 ) {
+      if (past[past.length - 1] === '.') {
         console.log('penis humido')
         return
       } else {
